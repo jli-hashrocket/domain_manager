@@ -1,7 +1,7 @@
 == Domain Manager
 The app allows the user to create a simple account and enter domains with returning ip addresses
 
-##Steps To Run Locally
+## Steps To Run Locally
 
 
 * Clone the repository
