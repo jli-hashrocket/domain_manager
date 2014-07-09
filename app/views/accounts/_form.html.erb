@@ -1,0 +1,15 @@
+<%= simple_form_for(@account) do |f| %>
+  <% if @account.errors.any? %>
+    <div id="error_explanation">
+      <%= pluralize(@account.errors.count, "error") %>
+      prohibited this account from being saved:
+      <ul>
+        <% @account.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <%= f.input :name %>
+    <%= f.submit %>
+<% end %>

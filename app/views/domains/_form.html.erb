@@ -1,0 +1,16 @@
+<%= simple_form_for(@domain) do |f| %>
+  <% if @domain.errors.any? %>
+    <div id="error_explanation">
+      <%= pluralize(@domain.errors.count, "error") %>
+      prohibited this domain from being saved:
+      <ul>
+        <% @domain.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <%= f.input :hostname %>
+    <%= f.association :account %>
+    <%= f.submit %>
+<% end %>
