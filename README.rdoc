@@ -1,28 +1,12 @@
-== README
+== Domain Manager
+The app allows the user to create a simple account and enter domains with returning ip addresses
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Steps To Run Locally
+--------------------
 
-Things you may want to cover:
+* Clone the repository
+* Run bundle install
+* Run rake db:create
+* Run rake db:migrate & rake db:test:prepare (optional)
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+The json formats will be located at localhost:3000/api/v1/accounts and localhost:3000/api/v1/domains
