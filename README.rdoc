@@ -9,4 +9,5 @@ The app allows the user to create a simple account and enter domains with return
 * Run rake db:create
 * Run rake db:migrate & rake db:test:prepare (optional)
 
-The json formats will be located at localhost:3000/api/v1/accounts and localhost:3000/api/v1/domains
+The json formats will be located at localhost:3000/api/v1/accounts.json and localhost:3000/api/v1/domains.json
+You can CRUD through the api itself with cURL commands i.e. curl -d "domain[hostname]=somewebsite.com&domain[account_id]=id" http://localhost:3000/api/v1/domains.json
