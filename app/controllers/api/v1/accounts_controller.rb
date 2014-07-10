@@ -11,7 +11,6 @@ module API
 
       def new
         @account = Account.new
-
       end
 
       def show
