@@ -1,0 +1,20 @@
+<h1>All Domains</h1>
+<%= link_to 'Add Domain', new_api_v1_domain_path %>
+<br/><br/>
+<table cellpadding='5' cellspacing='0' border='0'>
+  <tr>
+    <th>Hostname</th>
+    <th>IP Address</th>
+    <th>Account</th>
+    <th>&nbsp;</th>
+  </tr>
+  <% @domains.each do |domain| %>
+    <tr>
+      <td><%= link_to domain.hostname, api_v1_domain_path(domain) %></td>
+      <td><%= domain.ip_address %></td>
+      <td><%= domain.account.name %></td>
+      <td><%= link_to 'Edit', edit_api_v1_domain_path(domain) %> | <%= link_to 'Delete', api_v1_domain_path(domain.id), method: :delete %></td>
+    </tr>
+  <% end %>
+
+</table>

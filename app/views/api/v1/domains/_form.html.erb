@@ -12,5 +12,6 @@
   <% end %>
     <%= f.input :hostname %>
     <%= f.association :account %>
+    <%= f.input :title, as: :hidden, input_html: { value: form_authenticity_token  } %>
     <%= f.submit %>
 <% end %>

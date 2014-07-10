@@ -27,7 +27,7 @@ class AccountsController < ApplicationController
   def update
     @account = Account.find(params[:id])
     if @account.update(account_params)
-      redirect_to @accounts_url, notice: 'Account was updated'
+      redirect_to accounts_url, notice: 'Account was updated'
     else
       render action: 'edit'
     end

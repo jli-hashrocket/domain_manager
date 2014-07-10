@@ -3,5 +3,7 @@ class Account < ActiveRecord::Base
   validates_uniqueness_of :name
 
   has_many :domains,
-    inverse_of: :account
+    inverse_of: :account,
+  dependent: :destroy
+
 end

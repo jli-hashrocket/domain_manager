@@ -4,6 +4,7 @@ class Domain < ActiveRecord::Base
   validates_presence_of :hostname
   validates_uniqueness_of :hostname
   validates_presence_of :account_id
+  validates_presence_of :ip_address
 
   belongs_to :account,
     inverse_of: :domains

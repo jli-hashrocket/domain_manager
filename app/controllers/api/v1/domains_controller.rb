@@ -1,11 +1,12 @@
 module API
   module V1
     class DomainsController < ApplicationController
-      protect_from_forgery except: :index
+      skip_before_filter  :verify_authenticity_token
       respond_to :html, :json
 
       def index
-        respond_with Domain.all
+        @domains = Domain.all
+        respond_with @domains
       end
 
       def new
@@ -19,6 +20,7 @@ module API
 
       def edit
         @domain = Domain.find(params[:id])
+        respond_with @domain
       end
 
       def create
@@ -42,7 +44,7 @@ module API
 
       private
         def domain_params
-          params.require(:domain).permit(:hostname, :ip_address)
+          params.require(:domain).permit(:hostname, :ip_address, :account_id)
         end
     end
   end

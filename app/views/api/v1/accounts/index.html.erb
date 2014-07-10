@@ -1,0 +1,15 @@
+<h1>All Accounts</h1>
+<%= link_to 'Add Account', new_api_v1_account_path %>
+<br/><br/>
+<table cellpadding='5' cellspacing='0' border='0'>
+  <tr>
+    <th>Name</th>
+    <th>&nbsp;</th>
+  </tr>
+  <% @accounts.each do |account| %>
+  <tr>
+      <td><%= link_to account.name, api_v1_account_path(account) %></td>
+      <td><%= link_to 'Edit', edit_api_v1_account_path(account) %> | <%= link_to 'Delete', api_v1_account_path(account.id), method: :delete %></td>
+  </tr>
+  <% end %>
+</table>
